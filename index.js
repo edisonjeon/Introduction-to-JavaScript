@@ -251,11 +251,10 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-// function annoyingSong(i){
-//   for( let i = 99; i > 1; i--){
-//         text+= i + bottles of soda on the wall, + i + bottles of soda, take one down pass it around + i-- + bottles of soda on the wall";
-//       }
-// }
+function annoyingSong(i) {
+  return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
+}
+
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -286,7 +285,7 @@ function grade(gradeCalc) {
   if(gradeCalc >= 60) {
     return "you got a D";
   }
-  return "you got a F";
+  return "you got an F";
 }
   
   
