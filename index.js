@@ -238,8 +238,20 @@ Using the grade function below do the following:
 */
   
 function grade(gradeCalc) {
-  if (gradeCalc >= 90) {
-    return "you got an A"
+  if(gradeCalc >= 90) {
+    return "you got an A";
+  }
+  else if(gradeCalc >= 80) {
+    return "you got a B";
+  }
+  else if(gradeCalc >= 70) {
+    return "you got a C";
+  }
+  else if(gradeCalc >= 60) {
+    return "you got a D";
+  }
+  else if(gradeCalc < 60) {
+    return "you got a F";
   }
   }
   
