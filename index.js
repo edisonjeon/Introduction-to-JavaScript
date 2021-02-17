@@ -37,7 +37,7 @@ Do the following:
 let varOne = 10;
 let varTwo = 20;
 if (varOne < varTwo) {
-   console.log(varOne = 30);
+  console.log(varOne = 30);
 }
 
 /*
@@ -116,29 +116,28 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(years, pounds) {
-    if(years >= 2/12 && years < 4/12) {
-      return pounds * .1;
-    }
-    else if(years >= 4/12 && years < 7/12) {
-      return pounds * .05;
-    }
-    else if(years >= 7/12 && years < 12/12) {
-      return pounds * .04;
-    }
-    else if(years >= 1 && pounds <= 5) {
-      return pounds * .05;
-    }
-    else if(years >= 1 && pounds <= 10) {
-      return pounds * .04;
-    }
-    else if(years >= 1 && pounds <= 15) {
-      return pounds * .03;
-    }
-    else if(years >= 1 && pounds >= 15) { 
-      return pounds * .02;
-    }
+const hungryDog = (years, pounds) => {
+  if (years <= 1/3) {
+    return pounds * .1;
   }
+  if (years <= 7/12) {
+    return pounds * .05;
+  }
+  if (years < 1) {
+    return pounds * .04;
+  }
+  if (pounds <= 5) {
+    return pounds * .05;
+  }
+  if (pounds <= 10) {
+    return pounds * .04;
+  }
+  if (pounds <= 15) {
+    return pounds * .03;
+  }
+  return pounds * .02;
+}
+console.log(hungryDog(1,10));
   
 
 
@@ -163,12 +162,49 @@ Use the game function below to do the following:
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+function generateComputerChoice() {
+  // generate a random number
+  const randomNumber = Math.random();
+  // make string choice from num
+  if (randomNumber < .33) {
+    return 'rock';
+  }
+  if (randomNumber < .66) {
+    return 'paper';
+  }
+  else {
+    return 'scissors';
+  }
+};
+
+const choice = generateComputerChoice();
 
 function game(user, computer) {
-
-
+  // first check for tie
+  if (user === computer) {
+    return 'it\'s a tie!';
+  }
+  if (user === 'rock') {
+    if (computer === 'scissors') {
+      return 'you win!';
+    }
+    return 'you lose!';
+  }
+  if (user === 'paper') {
+    if (computer === 'rock') {
+      return 'you win!';
+    }
+    return 'you lose!';
+  }
+  if (user === 'scissors') {
+    if (computer === 'paper') {
+      return 'you win!';
+    }
+    return 'you lose!';
+  }
 }
-console.log(Math.ceil(Math.random() * 3));
+
+
   
   
 
@@ -215,11 +251,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(i){
-  for( let i = 99; i > 1; i--){
-        text+= i + bottles of soda on the wall, + i + bottles of soda, take one down pass it around + i-- + bottles of soda on the wall";
-      }
-}
+// function annoyingSong(i){
+//   for( let i = 99; i > 1; i--){
+//         text+= i + bottles of soda on the wall, + i + bottles of soda, take one down pass it around + i-- + bottles of soda on the wall";
+//       }
+// }
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -241,19 +277,17 @@ function grade(gradeCalc) {
   if(gradeCalc >= 90) {
     return "you got an A";
   }
-  else if(gradeCalc >= 80) {
+  if(gradeCalc >= 80) {
     return "you got a B";
   }
-  else if(gradeCalc >= 70) {
+  if(gradeCalc >= 70) {
     return "you got a C";
   }
-  else if(gradeCalc >= 60) {
+  if(gradeCalc >= 60) {
     return "you got a D";
   }
-  else if(gradeCalc < 60) {
-    return "you got a F";
-  }
-  }
+  return "you got a F";
+}
   
   
 
