@@ -116,9 +116,30 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(years, pounds) {
+    if(years >= 2/12 && years < 4/12) {
+      return pounds * .1;
+    }
+    else if(years >= 4/12 && years < 7/12) {
+      return pounds * .05;
+    }
+    else if(years >= 7/12 && years < 12/12) {
+      return pounds * .04;
+    }
+    else if(years >= 1 && pounds <= 5) {
+      return pounds * .05;
+    }
+    else if(years >= 1 && pounds <= 10) {
+      return pounds * .04;
+    }
+    else if(years >= 1 && pounds <= 15) {
+      return pounds * .03;
+    }
+    else if(years >= 1 && pounds >= 15) { 
+      return pounds * .02;
+    }
   }
+  
 
 
 
@@ -143,9 +164,11 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+function game(user, computer) {
+
+
 }
+console.log(Math.ceil(Math.random() * 3));
   
   
 
@@ -160,9 +183,10 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kmConv) {
+  return kmConv * .62;
   }
+console.log(miles(1));
 
 
 
@@ -174,9 +198,10 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cmConv){
+    return cmConv * .033;
   }
+  console.log(feet(2));
  
 
 
@@ -190,9 +215,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(i){
+  for( let i = 99; i > 1; i--){
+        text+= i + bottles of soda on the wall, + i + bottles of soda, take one down pass it around + i-- + bottles of soda on the wall";
+      }
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -210,8 +237,10 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(gradeCalc) {
+  if (gradeCalc >= 90) {
+    return "you got an A"
+  }
   }
   
   
