@@ -18,7 +18,11 @@ Do the following:
    HINT: no function required
 */
 
+var votingAge =  21;
 
+if (votingAge >= 18) {
+  console.log('true');
+}
 
 /*
 Task 1b - Values
@@ -30,6 +34,14 @@ Do the following:
 
    HINT: no function required
 */
+
+const one = 1;
+const two = 2;
+
+if (one < two) {
+  const one = 3;
+console.log(one);
+}
 
 
 
@@ -46,7 +58,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+const value = '1999';
+const valueNumber = Number(value);
+console.log(valueNumber);
 
 
 /*
@@ -58,9 +72,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
+
+  console.log(multiply(5, 4));
 
 
 
@@ -74,10 +90,11 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age){
+    return age * 7;
 }
 
+console.log(dogYears(3));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,11 +124,30 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(pounds, age){
+    if (age < 1/3) {
+      return pounds * .10;
+    }
+    else if (age < 7/12) {
+      return pounds * .05;
+    }
+    else if (age < 1) {
+      return pounds * .04;
+    }
+    else if (pounds <= 5) {
+      return pounds * .05;
+    }
+    else if (pounds <= 10) {
+      return pounds * .04;
+    }
+    else if (pounds <= 15) {
+      return pounds * .03;
+    } else {
+      return pounds * .02;
+    }
   }
 
-
+console.log(hungryDog(15,1));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -134,8 +170,34 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-    /*add your code here*/
+
+let computer = Math.random();
+  if (computer <= .33) {
+    computer = 'Rock';
+  }
+  else if (computer <= .67) {
+    computer = 'Paper';
+  } else {
+    computer = 'Scissors';
+  }
+
+  console.log(computer);
+
+function game(user, computer) {
+    if (user === 'Scissors' && computer === 'Paper') {
+      return 'you win!';
+    }
+    else if (user === 'Rock' && computer === 'Scissors') {
+      return 'you win!';
+    } 
+    else if (user === 'Paper' && computer === 'Rock') {
+      return 'you win!';
+    }
+    else if (user === computer) {
+      return 'it\'s a tie';
+    } else {
+      return 'you lose!'
+    }
 }
   
   
@@ -151,8 +213,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kmConv){
+    return kmConv * .621371;
   }
 
 
@@ -165,8 +227,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(cmConv){
+    return cmConv * .0328084;
   }
  
 
@@ -181,8 +243,10 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+        for (let i = 99; i >= 0; i--) {
+          return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${number - 1} bottles of soda on the wall`
+        }
   }
 
 
@@ -201,8 +265,22 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(percent){
+  if (percent >= 90) {
+    return 'you got an A';
+  }
+  else if (percent >= 80) {
+    return 'you got a B';
+  }
+  else if (percent >= 70) {
+    return 'you got a C';
+  }
+  else if (percent >= 60) {
+    return 'you got a D';
+  } else {
+    return 'you got an F';
+  }
+  
   }
   
   
